@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{message}}</h2>
+<!--    v-bind指令的用法-->
+    <img v-bind:src="imgURL" alt="">
+
+<!--    v-bind指令的语法糖 ：-->
+    <img :src="imgURL" alt="">
+    <a :href="baidu">百度一下</a>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        imgURL: 'http://t8.baidu.com/it/u=3571592872,3353494284&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1582443222&t=511f0363c5562e1fcd5a0a907399c074',
+        baidu: 'http://www.baidu.com'
+      }
+    })
+  </script>
+</body>
+</html>

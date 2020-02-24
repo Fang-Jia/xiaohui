@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>props的驼峰标识</title>
+</head>
+<body>
+
+  <div id="app">
+<!--    当组件中的数据变量为驼峰式时，那么这里使用v-bind挂载的变量必须使用 - 来隔开才行，不支持驼峰式命名-->
+    <cpn :c-movies="movies" :c-message="message"></cpn>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <ul>
+        <li v-for="item in cMovies">{{item}}</li>
+      </ul>
+      <h2>{{cMessage}}</h2>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      props: {
+        cMovies: {
+          type: Array,
+          required: true
+        },
+        cMessage: {
+          type: String,
+          required: true
+        }
+      }
+    };
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        movies: [1,2,3,4]
+      },
+      components: {
+        cpn:cpn
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件数据存放方式</title>
+</head>
+<body>
+
+  <div id="app">
+<!--    在组件注册时，可以传入data类型的函数，里面返回一个对象，该对象中的值就可以响应在模板中的相关变量中-->
+    <cpn></cpn>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <h2>标题：{{title}}</h2>
+      <p>我是内容：12345</p>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          data(){
+            return {
+              title: 'abc'
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

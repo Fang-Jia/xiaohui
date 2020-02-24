@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<script type="text/javascript">
+
+  // Promise是对异步请求的一个包装，比ajax更好
+  //  resolve 解析      reject 拒绝
+  //  当调用resolve方法时，回向下执行then方法， 若是执行reject方法时，则会执行catch方法
+
+  //  第一种方式
+  // new Promise((resolve,reject) => {
+  //   setTimeout(() => {
+  //     resolve('abc');
+  //     reject('异步请求失败')
+  //   },1000)
+  // }).then( data => {
+  //   console.log(data)
+  //
+  //   return new Promise((resolve,reject) => {
+  //     setTimeout(() => {
+  //       resolve('qqq');
+  //     },1000)
+  //   }).then((data) => {
+  //     console.log(data)
+  //   })
+  // }).catch(data => {
+  //   console.log(data)
+  // })
+
+  //  第二种方式   若是在then方法中，其中的代码不需要异步请求，但是需要做一些其他操作，可以使用该方法
+  // new Promise((resolve,reject) => {
+  //   setTimeout(() => {
+  //     resolve('abc');
+  //   },1000)
+  // }).then( data => {
+  //   console.log(data)
+  //
+  //   return Promise.resolve('qqq')
+  //   }).then((data) => {
+  //     console.log(data)
+  //   })
+
+  //  第三种方式
+  new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve('abc');
+    },1000)
+  }).then( data => {
+    console.log(data)
+
+    //之间return参数，vue会默认使用promise来封装，跟方法二一样
+    return 'qqq'
+  }).then((data) => {
+    console.log(data)
+  })
+</script>
+
+</body>
+<head>
+  <meta charset="UTF-8">
+  <title>Promise的基本使用</title>
+</head>
+</html>

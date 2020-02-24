@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动态绑定class</title>
+  <style>
+    .demo1{
+      color: red;
+    }
+    .demo2{
+      color: aqua;
+    }
+    .d1{
+      font-size: 30px;
+    }
+    .d2{
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+<!--    v-bind之动态绑定class  {}中的value值为false时不显示该class值，反之则显示-->
+    <h2 :class="{demo1: isDemo1}">{{message}}</h2>
+    <h2 :class="{demo2: isDemo2}">{{message}}</h2>
+    <button @click="btnClick">点击</button>
+
+<!--    数组模式-->
+    <h2 :class="[demo1,demo2]">{{message}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        isDemo1: false,
+        isDemo2: true,
+        demo1: 'd1',
+        demo2: 'd2'
+      },
+      methods: {
+        btnClick: function () {
+          this.isDemo1 = !this.isDemo1;
+          this.isDemo2 = !this.isDemo2;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

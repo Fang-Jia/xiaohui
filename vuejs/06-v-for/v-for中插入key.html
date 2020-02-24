@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for中插入key</title>
+</head>
+<body>
+
+  <div id="app">
+    <h2>{{message}}</h2>
+<!--    如果数组在页面上被遍历显示之后，要向遍历的数组中插入元素时，可以选择在标签中输入key属性 (需要使用v-bind绑定)，但是这个key的值要和显示在页面中的数组中的值相等
+        因为如果不加上key时，在向数组中添加值时，vue会把要添加的值添加到指定位置，并在该位置之后的一些值的下标则会每个都要加一，那么这样性能较低。
+        若是加上key，且key的值和显示在页面上的文本值相等，则添加新的值时，vue会先比价原先数值中的key和现有文本是否相等，不等则改变值。-->
+      <ul>
+        <li v-for="item in arr" :key="item">{{item}}</li>
+      </ul>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        arr: [12,13,14]
+      }
+    })
+  </script>
+</body>
+</html>

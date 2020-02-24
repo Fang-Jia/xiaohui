@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-on</title>
+</head>
+<body>
+
+  <div id="app">
+<!--    当该点击事件触发的函数有参数时，不传递参数，那么系统会把浏览器的鼠标事件MouseEvent对象传递进去-->
+    <button @click="btn1">按钮1</button>
+
+<!--    当既想传递参数，又想传递鼠标事件时，可以手动输入$event来传递鼠标事件-->
+    <button @click="btn2(123,$event)">按钮2</button>
+  </div>
+
+  <!--停止冒泡    v-on的修饰符--- .stop 表示只会触发使用该修饰符的事件-->
+  <div id="demo" @click="btn1">
+    <button @click.stop="btn2">按钮</button>
+
+    <form action="#">
+<!--  阻止默认行为  .prevent  表示会阻止使用该修饰符的默认事件-->
+      <input @click.prevent="tj" value="提交" type="submit">
+    </form>
+
+<!--监听键盘按键的事件   @keyup/@keydown -->
+    <input type="text" @keyup.stop="keyup">
+<!--    @keyup.enter表示只监听回车键点击的事件-->
+    <input type="text" @keyup.enter="keyup">
+<!--    .once 表示只会触发一次回调，表示该事件只会执行一次-->
+    <button @click.once="one">只执行一次</button>
+  </div>
+
+
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+      },
+      methods: {
+        btn1(event){
+          console.log(event);
+        },
+        btn2(argument,event){
+          console.log(argument,'........',event);
+        }
+      }
+    })
+
+    const demo = new Vue({
+      el: '#demo',
+      methods: {
+        btn1(){
+          console.log('111');
+        },
+        btn2(){
+          console.log('2222');
+        },
+        tj(){
+          console.log('提交提交提交......');
+        },
+        keyup(){
+          console.log('键盘点击了.....')
+        },
+        one(){
+          console.log('只执行一次.......')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

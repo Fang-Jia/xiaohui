@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vuejs/13-vueCLI/03-vue-cli3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vuejs/17-dev-mall" vcs="Git" />
+  </component>
+</project>

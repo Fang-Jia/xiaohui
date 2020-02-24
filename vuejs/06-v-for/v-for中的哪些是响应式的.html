@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for中的方法哪些是响应式的</title>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+      <li v-for="item in arr">{{item}}</li>
+    </ul>
+    <button @click="btn">按钮</button>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        arr: ['a','b','c','d','e']
+      },
+      methods: {
+        btn(){
+          //1.push() 表示想数组的末尾插入元素
+          // this.arr.push('q');
+
+        //  2.pop() 表示删除数组中的最后一个元素
+        //   this.arr.pop();
+
+        //  3.shift() 表示删除数组中的第一个元素
+        //   this.arr.shift();
+
+        //  4.unshift() 表示在数组前面添加元素
+        //   this.arr.unshift('t');
+
+        //  5.splice() 表示删除元素/插入元素/替换元素
+        //  删除元素：第二个参数传入你要删除的元素的个数（如果没有传，则表示后面的元素全部删除） splice(start,end)
+        //  替换元素：第二个参数，表示要替换几个元素，后面是用于替换的元素。 splice(start,length,value...)
+        //  插入元素：第二个元素为0，并且后面要跟需要插入的元素。 splice(start,0,value...)
+        //   this.arr.splice(1,3);
+        //   this.arr.splice(1,2,'i','o');
+        //   this.arr.splice(1,0,'w','e');
+
+        //  sort() 表示排序
+        //   this.arr.sort();
+
+        //  reverse() 表示反转，倒序
+        //   this.arr.reverse();
+
+          //通过索引值修改元素并不是响应式的，页面上不会同步显示修改后的值
+          // this.arr[2] = 'pp';
+
+        //  想要修改数组中某个值，又想是响应式的，那么可以使用splice方法，也可以使用Vue的set方法
+        //  set(要修改的对象，索引值，修改后的值)
+          Vue.set(this.arr,3,'oooo');
+        }
+      }
+    })
+  </script>
+</body>
+</html>

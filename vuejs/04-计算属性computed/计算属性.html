@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性</title>
+</head>
+<body>
+  <div id="app">
+    <h3>书籍的总价格:{{prices}}</h3>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        books: [
+          {name: '计算机大全',price: 80},
+          {name: '计算机',price: 10},
+          {name: '计算机命令',price: 40}
+        ]
+      },
+      computed: {
+        // prices: function () {
+        //   let sum = 0;
+        //   for(let i in this.books){
+        //     sum +=this.books[i].price;
+        //   }
+        //   return sum;
+        // }
+        //计算属性是通过其中的get，set方法来设置和获取值(一般set方法不用，吧计算属性当做只读来处理)
+        //计算属性的缓存：计算属性会缓存该方法，重复调用时，只会调用一次该方法
+        prices: {
+          get: function () {
+            let sum = 0;
+            for(let i in this.books){
+              sum +=this.books[i].price;
+            }
+            return sum;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

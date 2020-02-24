@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if</title>
+</head>
+<body>
+
+  <div id="app">
+    <h2 v-if="isShow">{{message}}</h2>
+    <h2 v-else>当v-if不满足时显示我</h2>
+    <button @click="btn">按钮</button>
+  </div>
+<!--  当v-if和v-else同时存在于一个标签内部时，那么这两个标签肯定是只显示其中一个。
+      那么vue会在自己的虚拟DOM中只映射其中一个标签，当条件判断发生改变时，会把该标签中的属性替换成另一个满足条件显示的标签属性
+      而不是直接用要显示的标签覆盖掉原有的标签。因此原来用户在该标签输入的数值会被复用，会再次在新标签中也显示。因此想要不让他显示。
+      就得加上key属性，分别给两个标签赋予不同的属性值。
+-->
+  <div id="login">
+    <span v-if="isShow">
+      <label for="username">用户账户：</label>
+      <input type="text" id="username" placeholder="用户账户" key="username">
+    </span>
+    <span v-else>
+      <label for="email">用户邮箱：</label>
+      <input type="email" id="email" placeholder="用户邮箱" key="email">
+    </span>
+    <button @click="btn">切换账户</button>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        isShow: true
+      },
+      methods: {
+        btn(){
+          this.isShow = !this.isShow;
+        }
+      }
+    })
+    const email = new Vue({
+      el: '#login',
+      data: {
+        isShow: true
+      },
+      methods: {
+        btn(){
+          this.isShow = !this.isShow;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

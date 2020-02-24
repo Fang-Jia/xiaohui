@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3f774353-8cbc-42d5-83c0-ba4761e161e6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Less File" />
+        <option value="TypeScript File" />
+        <option value="CSS File" />
+        <option value="Vue Single File Component" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../vuejs/13-vueCLI/03-vue-cli3" />
+  </component>
+  <component name="ProjectId" id="1Xpt7Vglmr7ODWFYD8lf5UmuPLg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xiaohui" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path" value="F:/IT-Tool/node.js/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
+    <property name="ts.external.directory.path" value="F:\编程软件\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebStorm\vuejs-01\13-vueCLI\05-tabbar\src\assets" />
+      <recent name="E:\WebStorm\vuejs-01\13-vueCLI\05-tabbar\src\assets\css" />
+      <recent name="E:\WebStorm\vuejs-01\12-前端模块化和webpack" />
+      <recent name="E:\WebStorm\vuejs-01\12-前端模块化和webpack\04-webpack的Plugin" />
+      <recent name="E:\WebStorm\vuejs-01\12-前端模块化,webpack\03-webpack配置vuejs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebStorm\vuejs-01\15-vuex\01-vuex-demo\src\store" />
+      <recent name="E:\WebStorm\vuejs-01\13-vueCLI\05-tabbar\src\views\profile" />
+      <recent name="E:\WebStorm\vuejs-01\13-vueCLI\04-vue-route\src\assets" />
+      <recent name="E:\WebStorm\vuejs-01\13-vueCLI\05-tabbar\src\assets" />
+      <recent name="E:\WebStorm\vuejs-01\12-前端模块化,webpack\02-webpack的配置\src\js" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f774353-8cbc-42d5-83c0-ba4761e161e6" name="Default Changelist" comment="" />
+      <created>1581754696311</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581754696311</updated>
+      <workItem from="1581754697448" duration="8639000" />
+      <workItem from="1581829774703" duration="11894000" />
+      <workItem from="1581856416771" duration="6778000" />
+      <workItem from="1581929585747" duration="4825000" />
+      <workItem from="1582012618806" duration="19269000" />
+      <workItem from="1582097607266" duration="18169000" />
+      <workItem from="1582170444032" duration="3083000" />
+      <workItem from="1582182517251" duration="20329000" />
+      <workItem from="1582261686960" duration="12326000" />
+      <workItem from="1582350201822" duration="23900000" />
+      <workItem from="1582435200647" duration="18811000" />
+      <workItem from="1582516047653" duration="4453000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="441" y="234" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582518954338">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="441" y="234" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.960@0.0.1440.960" timestamp="1582518954338" />
+    <state x="147" y="206" width="1200" height="720" key="DiffContextDialog" timestamp="1582019931371">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="147" y="206" width="1200" height="720" key="DiffContextDialog/0.0.1440.960@0.0.1440.960" timestamp="1582019931371" />
+    <state x="518" y="266" key="FileChooserDialogImpl" timestamp="1582530195022">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="518" y="266" key="FileChooserDialogImpl/0.0.1440.960@0.0.1440.960" timestamp="1582530195022" />
+    <state width="1364" height="239" key="GridCell.Tab.0.bottom" timestamp="1582217156195">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state width="1364" height="239" key="GridCell.Tab.0.bottom/0.0.1440.960@0.0.1440.960" timestamp="1582217156195" />
+    <state width="1364" height="239" key="GridCell.Tab.0.center" timestamp="1582217156194">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state width="1364" height="239" key="GridCell.Tab.0.center/0.0.1440.960@0.0.1440.960" timestamp="1582217156194" />
+    <state width="1364" height="239" key="GridCell.Tab.0.left" timestamp="1582217156194">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state width="1364" height="239" key="GridCell.Tab.0.left/0.0.1440.960@0.0.1440.960" timestamp="1582217156194" />
+    <state width="1364" height="239" key="GridCell.Tab.0.right" timestamp="1582217156195">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state width="1364" height="239" key="GridCell.Tab.0.right/0.0.1440.960@0.0.1440.960" timestamp="1582217156195" />
+    <state x="287" y="177" key="SettingsEditor" timestamp="1582529988891">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="287" y="177" key="SettingsEditor/0.0.1440.960@0.0.1440.960" timestamp="1582529988891" />
+    <state x="114" y="144" width="1200" height="720" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1582019886874">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="114" y="144" width="1200" height="720" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1440.960@0.0.1440.960" timestamp="1582019886874" />
+    <state x="455" y="319" key="jetbrains.nodejs.interpreters-dialog" timestamp="1582182459398">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="455" y="319" key="jetbrains.nodejs.interpreters-dialog/0.0.1440.960@0.0.1440.960" timestamp="1582182459398" />
+    <state x="381" y="224" key="run.anything.popup" timestamp="1582361362138">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="381" y="224" key="run.anything.popup/0.0.1440.960@0.0.1440.960" timestamp="1582361362138" />
+    <state x="377" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1582461940571">
+      <screen x="0" y="0" width="1440" height="960" />
+    </state>
+    <state x="377" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1440.960@0.0.1440.960" timestamp="1582461940571" />
+  </component>
+</project>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-model结合radio和checkbox属性</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="app">
+<!--    v-model结合radio-->
+    <div class="input-group-text">
+      <label for="male">
+        <input  id="male" type="radio" name="sex" value="男" v-model="sex">男&nbsp;&nbsp;</input>
+      </label>
+      <label for="female">
+        <input id="female" type="radio" name="sex" value="女" v-model="sex">女</input>
+      </label>
+    </div>
+    <h2>您选择的性别为：{{sex}}</h2><br>
+
+<!--    v-model结合checkbox属性-->
+    <div class="input-group-text">
+      <label for="agree">
+        <input type="checkbox" id="agree" v-model="isAgree">同意协议
+      </label>
+    </div>
+    <h2>您是否同意协议：{{isAgree}}</h2><br>
+
+    <div class="input-group-text">
+      <label for="1">
+        <input type="checkbox" v-model="hobbies" id="1" value="篮球">篮球&nbsp;&nbsp;
+      </label>
+      <label for="2">
+        <input type="checkbox" v-model="hobbies" id="2" value="足球">足球&nbsp;&nbsp;
+      </label>
+      <label for="3">
+        <input type="checkbox" v-model="hobbies" id="3" value="羽毛球">羽毛球&nbsp;&nbsp;
+      </label>
+      <label for="4">
+        <input type="checkbox" v-model="hobbies" id="4" value="台球">台球&nbsp;&nbsp;
+      </label>
+    </div>
+    <h2>您的爱好为：{{hobbies}}</h2><br>
+
+<!--    v-mode结合select-->
+    <select class="custom-select" name="select" id="a" v-model="fruit">
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="橘子">橘子</option>
+      <option value="芒果">芒果</option>
+    </select>
+    <h2>您选择的结果为：{{fruit}}</h2><br>
+
+<!--    值绑定-->
+    <div class="input-group-text">
+      <label :for="item" v-for="item in originHobbies">
+        <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}&nbsp;&nbsp;&nbsp;
+      </label>
+    </div>
+    <h2>您选择的爱好为：{{hobbies}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        sex: '男',
+        isAgree: false,
+        hobbies: [],
+        fruit: '芒果',
+        originHobbies: ['香蕉','苹果','台球','足球']
+      }
+    })
+  </script>
+</body>
+</html>

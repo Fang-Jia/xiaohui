@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache语法--{{}}}</title>
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>{{message}}</h2>
+<!--    Mustache语法不仅可以写变量，还可以写简单的表达式-->
+    <h2>{{firstName}} {{lastName}}</h2>
+    <h2>{{firstName +' '+ lastName}}</h2>
+
+<!--    v-once指令---表示变量值更改时，该区域的值不会被更改-->
+    <h2 v-once>{{message}}</h2>
+
+<!--    v-html指令---表示会把服务器返回的标签类型的值解析为HTML值-->
+    <h2 v-html="url"></h2>
+
+<!--    v-text指令---表示回覆盖掉标签中本来的文本-->
+    <h2 v-text="message">哈哈啊</h2>
+
+<!--    v-pre指令---表示不会解析vue中的值-->
+    <h2 v-pre>{{message}}</h2>
+  </div>
+
+<!--  v-cloak指令---表示在vue解析之前该属性存在，vue解析之后该属性会被删掉-->
+  <h2 id="demo" v-cloak>{{message}}</h2>
+
+<script src="../js/vue.js"></script>
+<script>
+  setInterval(function () {
+    const demo = new Vue({
+      el: '#demo',
+      data: {
+        message: 'hello demo'
+      }
+    })
+  },1000);
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello word',
+      firstName: '小',
+      lastName: '方',
+      url: '<a href="www.baidu.com">百度一下</a>'
+    }
+  })
+</script>
+</body>
+</html>

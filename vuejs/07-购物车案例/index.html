@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+  <meta charset="UTF-8">
+  <title>购物车</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div v-if="books.length">
+      <table class="table table-bordered table-light table-hover">
+        <thead class="thead-light">
+        <tr>
+          <th></th>
+          <th>书籍名称</th>
+          <th>出版日期</th>
+          <th>价格</th>
+          <th>购买数量</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item,index) in books">
+          <td>{{index + 1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.time}}</td>
+          <!--      过滤器：使用 | 标志来表明其使用过滤器，过滤器是在 filters 中，并且过滤器前面的数值会被当做参数传递过去-->
+          <td>{{item.price | getPrice}}</td>
+          <td>
+            <!--        当该图书的书籍数量为1个的时候，-标志表示为不可用状态-->
+            <button @click="sub(index)" v-bind:disabled="item.count <= 1">-</button>
+            {{item.count}}
+            <button @click="add(index)">+</button>
+          </td>
+          <td>
+            <button @click="remove(index)">移除</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <h2>总价格：{{priceSum | getPrice}}</h2>
+    </div>
+
+    <h2 v-else>购物车是空的！！！</h2>
+  </div>
+
+
+<script src="../js/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

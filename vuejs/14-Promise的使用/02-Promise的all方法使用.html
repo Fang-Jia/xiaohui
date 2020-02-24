@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise的all方法使用</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  Promise.all([
+      new Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve('aaa')
+        },1000)
+      }),
+
+      new Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve('qqq')
+        },1000)
+      })
+  ]).then((results => {
+    console.log(results)
+  }))
+</script>
+</body>
+</html>

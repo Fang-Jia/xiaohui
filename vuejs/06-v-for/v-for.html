@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for</title>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+<!--1.遍历数组      v-for=(value index)中 in前面的变量为一个时，表示数组中的值。  为两个时，第一个表示数组值，第二个表示数组下标-->
+      <li v-for="(value,index) in arr">{{value}}</li>
+
+<!--2.遍历对象      v-for=(value key index)中 in前面为一个变量时，表示对象中的value值
+                                             in前面为两个变量时，表示对象中的value，key
+                                             in前面为三个变量时，则分别表示对象中value，key，index-->
+      <li v-for="(value,key,index) in person">{{key}}-{{value}}-{{index}}</li>
+    </ul>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        item:'',
+        arr: [12,13,14],
+        person: {
+          name: 'xiao-fang',
+          age: '22',
+          sex: '男'
+        }
+      }
+    });
+  </script>
+</body>
+</html>

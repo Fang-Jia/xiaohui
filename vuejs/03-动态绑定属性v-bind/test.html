@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .demo{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <ul id="app">
+    <li @click="btn(index)" v-for="(m,index) in movies">{{m}}</li>
+  </ul>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        movies: ['海贼王','火影忍者','进击的巨人','妖精的尾巴','东京食尸鬼']
+      },
+      methods: {
+        btn: function (index) {
+          document.getElementById('app').children[index].className = 'demo';
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父访问子-$children,$refs</title>
+</head>
+<body>
+  <div id="app">
+    <cpn></cpn>
+    <cpn ref="cpn2"></cpn>
+    <cpn></cpn>
+
+    <!--1.  父访问子组件中的数值或方法时，可以使用$children，使用this调用该方法时，
+          会返回一个Vue组件数组，里面包含了在页面上显示的组件及其相关的内容-->
+    <button @click="btnClick">$children按钮</button>
+
+<!--2.使用$refs时，该方法根据子组件内的 属性ref的值 来进行相关组件 对象的绑定, 并通过this.$refs.想要调用的子组件内部数值的名称    -->
+    <button @click="btnClick">$refs按钮</button>
+  </div>
+
+  <template id="cpn">
+    <h2>我是子组件</h2>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      data(){
+        return {
+          name: 'cpn-data'
+        }
+      },
+      methods: {
+        showMessage(){
+          return 'cpn-methods'
+        }
+      }
+    };
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+      },
+      components: {
+        cpn: cpn
+      },
+      methods: {
+        btnClick(){
+          // console.log(this.$children[0].name);
+          console.log(this.$refs.cpn2)
+          console.log(this.$refs.cpn2.name);
+          console.log(this.$refs.cpn2.showMessage());
+        }
+      }
+    })
+  </script>
+</body>
+</html>

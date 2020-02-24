@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>子向父组件传递数据：自定义事件</title>
+</head>
+<body>
+<!--父组件-->
+  <div id="app">
+<!--    2.在父组件中接收子组件传递来的事件名，并在自身的methods方法中监听该事件-->
+    <cpn :categories="category" @item-click="spnClick"></cpn>
+  </div>
+
+<!--子组件-->
+  <template id="cpn">
+    <div>
+<!--      1.首先在模板中定义一个事件，并在注册组件时，监听该事件，使用this.$emit('向父组件传递的事件名'，传递的参数)-->
+      <button v-for="item in categories" @click="btnClick(item)">{{item.name}}</button>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      props: {
+        categories: {
+          type: Object,
+          required: true
+        }
+      },
+      methods: {
+        btnClick(item){
+          this.$emit('item-click',item);
+        }
+      }
+    }
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello word',
+        category: [
+          {id:1001,name:'数码数电'},
+          {id:1002,name:'生活用品'},
+          {id:1003,name:'精品首饰'}
+        ]
+      },
+      components: {
+        cpn:cpn
+      },
+      methods: {
+        spnClick(item){
+          console.log(item);
+        }
+      }
+    })
+  </script>
+</body>
+</html>
