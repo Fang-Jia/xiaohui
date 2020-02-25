@@ -250,7 +250,7 @@ function runTimeout(fun) {
             // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
             return cachedSetTimeout.call(null, fun, 0);
         } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our content correct otherwise it will throw a global error
             return cachedSetTimeout.call(this, fun, 0);
         }
     }
@@ -275,7 +275,7 @@ function runClearTimeout(marker) {
             // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
             return cachedClearTimeout.call(null, marker);
         } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our content correct otherwise it will throw a global error.
             // Some versions of I.E. have different rules for clearTimeout vs setTimeout
             return cachedClearTimeout.call(this, marker);
         }
@@ -2781,7 +2781,7 @@ function getPropDefaultValue (vm, prop, key) {
     return vm._props[key]
   }
   // call factory function for non-Function types
-  // a value is Function if its prototype is function even across different execution context
+  // a value is Function if its prototype is function even across different execution content
   return typeof def === 'function' && getType(prop.type) !== 'Function'
     ? def.call(vm)
     : def
@@ -3625,7 +3625,7 @@ function resolveSlots (
       delete data.attrs.slot;
     }
     // named slots should only be respected if the vnode was rendered in the
-    // same context.
+    // same content.
     if ((child.context === context || child.fnContext === context) &&
       data && data.slot != null
     ) {
@@ -4083,16 +4083,16 @@ function FunctionalRenderContext (
 
   var options = Ctor.options;
   // ensure the createElement function in functional components
-  // gets a unique context - this is necessary for correct named slot check
+  // gets a unique content - this is necessary for correct named slot check
   var contextVm;
   if (hasOwn(parent, '_uid')) {
     contextVm = Object.create(parent);
     // $flow-disable-line
     contextVm._original = parent;
   } else {
-    // the context vm passed in is a functional context as well.
+    // the content vm passed in is a functional content as well.
     // in this case we want to make sure we are able to get a hold to the
-    // real context instance.
+    // real content instance.
     contextVm = parent;
     // $flow-disable-line
     parent = parent._original;
@@ -4605,7 +4605,7 @@ function initRender (vm) {
   vm.$slots = resolveSlots(options._renderChildren, renderContext);
   vm.$scopedSlots = emptyObject;
   // bind the createElement fn to this instance
-  // so that we get proper render context inside it.
+  // so that we get proper render content inside it.
   // args order: tag, data, children, normalizationType, alwaysNormalize
   // internal version is used by render functions compiled from templates
   vm._c = function (a, b, c, d) { return createElement(vm, a, b, c, d, false); };
